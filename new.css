@@ -39,7 +39,7 @@ body {
     width: 320px;
 }
 
-.ahoj {
+.wrapper {
     max-width: 980px;
     margin: 0 auto;
 }
