@@ -1,0 +1,45 @@
+* {
+    font-family: 'Akshar', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.start {
+    width: 300px;
+    font-size: 30px;
+    background-color: darkblue;
+    border: 6px ridge black;
+    border-radius: 15px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    cursor: pointer;
+    outline: none;
+    height: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo\.png {
+    height: 320px;
+    width: 320px;
+}
+
+.ahoj {
+    max-width: 980px;
+    margin: 0 auto;
+}
