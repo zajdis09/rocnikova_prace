@@ -1,9 +1,9 @@
 let question = document.getElementsByClassName("question")[0];
 let answer = document.getElementsByClassName("answer");
-let a = document.getElementsByClassName("a")[0];
-let b = document.getElementsByClassName("b")[0];
-let c = document.getElementsByClassName("c")[0];
-let d = document.getElementsByClassName("d")[0];
+let answerA = document.getElementsByClassName("answer answerA")[0];
+let answerB = document.getElementsByClassName("answer answerB")[0];
+let answerC = document.getElementsByClassName("answer answerC")[0];
+let answerD = document.getElementsByClassName("answer answerD")[0];
 let start = document.getElementsByClassName("start")[0];
 let questions = [];
 
@@ -182,10 +182,10 @@ const nextRound = () => {
     resetColors();
     random = getRandomInt(questions.length);
     question.innerText = questions[random].question;
-    a.innerText = questions[random].answer1;
-    b.innerText = questions[random].answer2;
-    c.innerText = questions[random].answer3;
-    d.innerText = questions[random].answer4;
+    answerA.innerText = questions[random].answer1;
+    answerB.innerText = questions[random].answer2;
+    answerC.innerText = questions[random].answer3;
+    answerD.innerText = questions[random].answer4;
 };
 
 
