@@ -5,17 +5,19 @@ let answerB = document.getElementsByClassName("answer answerB")[0];
 let answerC = document.getElementsByClassName("answer answerC")[0];
 let answerD = document.getElementsByClassName("answer answerD")[0];
 let start = document.getElementsByClassName("start")[0];
+let restart = document.getElementsByClassName("restart")[0];
 let questions = [];
 
 const reset = () => {
     round = 0;
     money = 0;
     startGame();
+
 }
 
 let question1 = {
     question: "Co je to ukulele?",
-    answer1: "A: vzácné luční kvítí",
+    answer1: "vzácné luční kvítí",
     answer2: "nástroj strunný",
     answer3: "bulharské hory",
     answer4: "jezero v Norsku",
@@ -114,6 +116,16 @@ let question10 = {
 };
 questions.push(question10);
 
+let question11 = {
+    question: "Český král Václav IV. byl synem?",
+    answer1: "Karla IV.",
+    answer2: "Václava III.",
+    answer3: "tadan",
+    answer4: "Jana Lucemburského",
+    answer: "Karla IV.",
+};
+questions.push(question11);
+
 let random = 0;
 let money = 0;
 let round = 0;
@@ -127,7 +139,7 @@ const select = () => {
             element.style.backgroundColor = "green";
             round++;
             if (money === 0) {
-                money = 1000;
+                money = 2000;
             } else {
                 money *= 2;
             }
@@ -136,7 +148,7 @@ const select = () => {
                 nextRound();
             } else {
                 question.innerText = `${money} CZK`;
-                setTimeout(nextRound, 2000);
+                setTimeout(nextRound, 3000);
             }
         } else {
             element.style.backgroundColor = "red";
@@ -157,7 +169,12 @@ const startGame = () => {
         answer[i].onclick = select;
     }
     start.style.display = "none";
-
+    question.style.visibility = "visible";
+    answerA.style.visibility = "visible";
+    answerB.style.visibility = "visible";
+    answerC.style.visibility = "visible";
+    answerD.style.visibility = "visible";
+    restart.style.visibility = "visible";
     nextRound();
 };
 
@@ -167,7 +184,7 @@ start.onclick = startGame;
 const resetColors = () => {
     let c = 0;
     for (c; c < answer.length; c++) {
-        answer[c].style.backgroundColor = "red";
+        answer[c].style.backgroundColor = "darkblue";
     }
 }
 
@@ -199,7 +216,7 @@ const end = () => {
         }
     }
     question.innerText = `Restart hry, Výhra ${money} CZK`;
-    setTimeout(reset, 2000);
+    setTimeout(reset, 3000);
 };
 
 

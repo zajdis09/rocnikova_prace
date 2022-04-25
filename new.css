@@ -26,19 +26,17 @@ body {
 
 .start {
     width: 350px;
-    font-size: 30px;
+    font-size: 32px;
     background-color: darkblue;
-    border: 3px black;
+    border: 3px;
     border-radius: 10px;
     color: white;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
     cursor: pointer;
-    outline: none;
-    height: 60px;
+    height: 70px;
     margin-top: 1em;
-
 }
 
 
@@ -53,9 +51,10 @@ body {
     color: white;
     padding: 1em;
     text-align: center;
-    border: 3px black;
+    border: 3px;
     border-radius: 10px;
     visibility: hidden;
+    cursor: pointer;
 }
 
 .answer {
@@ -64,12 +63,13 @@ body {
     color: white;
     padding: 1em;
     text-align: center;
-    border: 3px black;
+    border: 3px;
     border-radius: 10px;
     margin-left: 250px;
     margin-right: 250px;
     padding-top: 15px;
     visibility: hidden;
+    cursor: pointer;
 }
 
 .start:hover {
@@ -93,6 +93,20 @@ body {
     content: "D: ";
 }
 
+.restart {
+    width: 220px;
+    height: 80px;
+    font-size: 28px;
+    background-color: green;
+    border: 3px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+    position: absolute;
+    margin-left: -420px;
+    margin-top: -200px;
+}
 
 
 
