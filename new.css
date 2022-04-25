@@ -12,34 +12,91 @@ body {
     background-color: lightblue;
 }
 
-.start {
-    width: 300px;
-    font-size: 30px;
-    background-color: darkblue;
-    border: 6px ridge black;
-    border-radius: 15px;
-    color: white;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    cursor: pointer;
-    outline: none;
-    height: 50px;
-}
-
-.logo {
+.obrazek {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
 
-.logo\.png {
-    height: 320px;
-    width: 320px;
+.obrazek\.png {
+    height: 350px;
+    width: 350px;
 }
+
+.start {
+    width: 350px;
+    font-size: 30px;
+    background-color: darkblue;
+    border: 3px black;
+    border-radius: 10px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    cursor: pointer;
+    outline: none;
+    height: 60px;
+    margin-top: 1em;
+
+}
+
 
 .wrapper {
     max-width: 980px;
     margin: 0 auto;
 }
+
+.question {
+    font-size: 25px;
+    background-color: darkblue;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    border: 3px black;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.answer {
+    font-size: 18px;
+    background-color: darkblue;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    border: 3px black;
+    border-radius: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
+    padding-top: 15px;
+    visibility: hidden;
+}
+
+.start:hover {
+    background-color: green;
+}
+
+.answerA::before {
+    content: "A: ";
+
+}
+
+.answerB::before {
+    content: "B: ";
+}
+
+.answerC::before {
+    content: "C: ";
+}
+
+.answerD::before {
+    content: "D: ";
+}
+
+
+
+
+
+
+
+
