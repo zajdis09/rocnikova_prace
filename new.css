@@ -9,7 +9,9 @@ html {
 }
 
 body {
-    background-color: lightblue;
+    background: -moz-linear-gradient(30deg, rgb(147, 217, 255) 0%, rgb(73, 199, 153) 100%);
+    background: -webkit-linear-gradient(30deg, rgb(147, 217, 255) 0%, rgb(0, 241, 160) 100%);
+    background: linear-gradient(30deg, rgb(147, 217, 255) 0%, rgb(0, 241, 160) 100%);
 }
 
 .obrazek {
@@ -54,7 +56,6 @@ body {
     border: 3px;
     border-radius: 10px;
     visibility: hidden;
-    cursor: pointer;
 }
 
 .answer {
@@ -96,7 +97,7 @@ body {
 .restart {
     width: 220px;
     height: 80px;
-    font-size: 28px;
+    font-size: 25px;
     background-color: green;
     border: 3px;
     border-radius: 10px;
@@ -105,7 +106,37 @@ body {
     visibility: hidden;
     position: absolute;
     margin-left: -420px;
-    margin-top: -200px;
+    margin-top: 16.75px;
+}
+
+.padesat {
+    width: 220px;
+    height: 80px;
+    font-size: 25px;
+    background-color: purple;
+    border: 3px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+    position: absolute;
+    margin-left: -420px;
+    margin-top: 206.75px;
+}
+
+.zmena {
+    width: 220px;
+    height: 80px;
+    font-size: 25px;
+    background-color: purple;
+    border: 3px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+    position: absolute;
+    margin-left: -420px;
+    margin-top: 316.75px;
 }
 
 
