@@ -6,13 +6,17 @@ let answerC = document.getElementsByClassName("answer answerC")[0];
 let answerD = document.getElementsByClassName("answer answerD")[0];
 let start = document.getElementsByClassName("start")[0];
 let restart = document.getElementsByClassName("restart")[0];
+let padesat = document.getElementsByClassName("padesat")[0];
+let zmena = document.getElementsByClassName("zmena")[0];
 let questions = [];
+let vymena = false;
 
 const reset = () => {
     round = 0;
     money = 0;
+    vymena = false;
+    zmena.style.visibility = "invisible";
     startGame();
-
 }
 
 let question1 = {
@@ -138,11 +142,38 @@ const select = () => {
         if (element.innerText === questions[random].answer) {
             element.style.backgroundColor = "green";
             round++;
-            if (money === 0) {
+            if (round === 1) {
+                money = 1000;
+            } else if (round === 2) {
                 money = 2000;
-            } else {
-                money *= 2;
+            } else if (round === 3) {
+                money = 3000;
+            } else if (round === 4) {
+                money = 5000;
+            } else if (round === 5) {
+                money = 10000;
+            } else if (round === 6) {
+                money = 20000;
+            } else if (round === 7) {
+                money = 40000;
+            } else if (round === 8) {
+                money = 80000;
+            } else if (round === 9) {
+                money = 160000;
+            } else if (round === 10) {
+                money = 320000;
+            } else if (round === 11) {
+                money = 640000;
+            } else if (round === 12) {
+                money = 1250000;
+            } else if (round === 13) {
+                money = 2500000;
+            } else if (round === 14) {
+                money = 5000000;
+            } else if (round === 15) {
+                money = 10000000;
             }
+
             finished = true;
             if (round === rounds) {
                 nextRound();
@@ -175,6 +206,9 @@ const startGame = () => {
     answerC.style.visibility = "visible";
     answerD.style.visibility = "visible";
     restart.style.visibility = "visible";
+    padesat.style.visibility = "visible";
+    zmena.style.visibility = "visible";
+
     nextRound();
 };
 
@@ -190,7 +224,6 @@ const resetColors = () => {
 
 const nextRound = () => {
     finished = false;
-
     if (round === rounds) {
         finished = true;
         question.innerText = `Výhra ${money} CZK`;
@@ -203,6 +236,7 @@ const nextRound = () => {
     answerB.innerText = questions[random].answer2;
     answerC.innerText = questions[random].answer3;
     answerD.innerText = questions[random].answer4;
+
 };
 
 
@@ -218,6 +252,8 @@ const end = () => {
     question.innerText = `Restart hry, Výhra ${money} CZK`;
     setTimeout(reset, 3000);
 };
+
+
 
 
 
