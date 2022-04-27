@@ -133,7 +133,7 @@ questions.push(question11);
 let random = 0;
 let money = 0;
 let round = 0;
-let rounds = questions.length;
+let rounds = 15;
 let finished = false;
 
 const select = () => {
@@ -178,8 +178,8 @@ const select = () => {
             if (round === rounds) {
                 nextRound();
             } else {
-                question.innerText = `${money} CZK`;
-                setTimeout(nextRound, 3000);
+                question.innerText = `Aktuálně máš ${money} Kč`;
+                setTimeout(nextRound, 2000);
             }
         } else {
             element.style.backgroundColor = "red";
@@ -209,6 +209,7 @@ const startGame = () => {
     padesat.style.visibility = "visible";
     zmena.style.visibility = "visible";
 
+
     nextRound();
 };
 
@@ -226,7 +227,8 @@ const nextRound = () => {
     finished = false;
     if (round === rounds) {
         finished = true;
-        question.innerText = `Výhra ${money} CZK`;
+        question.innerText = `Výhral jsi ${money} Kč
+        Gratuluji, jsi první výherce v historii, kdo vyhrál celou soutěž.`;
         return;
     }
     resetColors();
@@ -239,9 +241,9 @@ const nextRound = () => {
 
 };
 
-
 const end = () => {
     finished = true;
+
     let c = 0;
     for (c; c < answer.length; c++) {
         if (answer[c].innerText === questions[random].answer) {
@@ -249,8 +251,8 @@ const end = () => {
             break;
         }
     }
-    question.innerText = `Restart hry, Výhra ${money} CZK`;
-    setTimeout(reset, 3000);
+    question.innerText = `Vyhrál jsi ${money} Kč
+    Pokud chceš hrát znovu, klikni na zelené tlačítko.`;
 };
 
 
