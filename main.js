@@ -8,16 +8,10 @@ let start = document.getElementsByClassName("start")[0];
 let restart = document.getElementsByClassName("restart")[0];
 let padesat = document.getElementsByClassName("padesat")[0];
 let zmena = document.getElementsByClassName("zmena")[0];
+let wsad = document.getElementsByClassName("wsad")[0];
 let questions = [];
+let tady = 0;
 let vymena = false;
-
-const reset = () => {
-    round = 0;
-    money = 0;
-    vymena = false;
-    zmena.style.visibility = "invisible";
-    startGame();
-}
 
 let question1 = {
     question: "Co je to ukulele?",
@@ -33,8 +27,8 @@ let question2 = {
     question: "V pohádce Jana Wericha „Tři veteráni“ princezně Bosaně naroste:",
     answer1: "sloní kel",
     answer2: "jelení paroh",
-    answer3: "kančí tesák",
-    answer4: "dlouhý nos",
+    answer3: "dlouhý nos",
+    answer4: "kančí tesák",
     answer: "dlouhý nos",
 };
 questions.push(question2);
@@ -94,8 +88,8 @@ let question8 = {
     question: "Který z těchto hráčů nehraje za SK Kosmonosy",
     answer1: "Jan Keszeg",
     answer2: "Jan Podzimek",
-    answer3: "Tomáš Fabián",
-    answer4: "Vojtěch Šuc",
+    answer3: "Vojtěch Šuc",
+    answer4: "Tomáš Fabián",
     answer: "Vojtěch Šuc",
 };
 questions.push(question8);
@@ -135,6 +129,27 @@ let money = 0;
 let round = 0;
 let rounds = 15;
 let finished = false;
+
+const startGame = () => {
+    console.log("start hry");
+    let i = 0;
+    for (i; i < answer.length; i++) {
+        answer[i].onclick = select;
+    }
+    start.style.display = "none";
+    question.style.visibility = "visible";
+    answerA.style.visibility = "visible";
+    answerB.style.visibility = "visible";
+    answerC.style.visibility = "visible";
+    answerD.style.visibility = "visible";
+    restart.style.visibility = "visible";
+    padesat.style.visibility = "visible";
+    zmena.style.visibility = "visible";
+    wsad.style.visibility = "visible";
+    nextRound();
+};
+
+start.onclick = startGame;
 
 const select = () => {
     let element = event.target;
@@ -192,35 +207,20 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-const startGame = () => {
-    console.log("start hry");
-    let i = 0;
-
-    for (i; i < answer.length; i++) {
-        answer[i].onclick = select;
-    }
-    start.style.display = "none";
-    question.style.visibility = "visible";
-    answerA.style.visibility = "visible";
-    answerB.style.visibility = "visible";
-    answerC.style.visibility = "visible";
-    answerD.style.visibility = "visible";
-    restart.style.visibility = "visible";
-    padesat.style.visibility = "visible";
-    zmena.style.visibility = "visible";
-
-
-    nextRound();
-};
-
-start.onclick = startGame;
-
 
 const resetColors = () => {
     let c = 0;
     for (c; c < answer.length; c++) {
         answer[c].style.backgroundColor = "darkblue";
     }
+}
+
+const reset = () => {
+    round = 0;
+    money = 0;
+    tady = 0;
+    vymena = false;
+    startGame();
 }
 
 const nextRound = () => {
@@ -238,8 +238,37 @@ const nextRound = () => {
     answerB.innerText = questions[random].answer2;
     answerC.innerText = questions[random].answer3;
     answerD.innerText = questions[random].answer4;
-
 };
+
+const otazka = () => {
+    if (tady == 0) {
+        tady = 1;
+        zmena.onclick = nextRound();
+    } else {
+        zmena.onclick = null;
+    }
+}
+
+const pade = () => {
+    for (let c = 0; c < answer.length; c++) {
+        if (answer[c].innerText === questions[random].answer) {
+            answer[c].style.background = "green";
+            answer[c + 1].style.background = "green";
+            padesat.onclick = null;
+            break;
+        }
+    }
+}
+
+const ahoj = () => {
+    for (let c = 0; c < answer.length; c++) {
+        if (answer[c].innerText === questions[random].answer) {
+            answer[c].style.background = "green";
+            wsad.onclick = null;
+            break;
+        }
+    }
+}
 
 const end = () => {
     finished = true;
@@ -252,10 +281,7 @@ const end = () => {
         }
     }
     question.innerText = `Vyhrál jsi ${money} Kč
-    Pokud chceš hrát znovu, klikni na zelené tlačítko.`;
+    Pokud chceš hrát znovu, klikni na černé tlačítko.`;
 };
-
-
-
 
 
