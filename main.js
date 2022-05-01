@@ -199,7 +199,7 @@ let question19 = {
     answer2: "112 let",
     answer3: "9,5 roku",
     answer4: "2 roky",
-    answer: "Devět a půl roku",
+    answer: "9,5 roku",
 };
 questions.push(question19);
 
@@ -324,12 +324,12 @@ let question31 = {
 questions.push(question31);
 
 let question32 = {
-    question: "",
-    answer1: "",
-    answer2: "",
-    answer3: "",
-    answer4: "",
-    answer: "",
+    question: "Kolik se rovná tento příklad 9-3÷1/3+1 ?",
+    answer1: "9",
+    answer2: "1",
+    answer3: "-1",
+    answer4: "-9",
+    answer: "1",
 };
 questions.push(question32);
 
@@ -425,11 +425,11 @@ questions.push(question41);
 
 let question42 = {
     question: "Jaká je nejpoužíbanější socialní sít všech dob?",
-    answer1: "Facebook ",
-    answer2: "YouTube ",
-    answer3: "Instagram ",
-    answer4: "TikTok ",
-    answer: "Facebook ",
+    answer1: "Facebook",
+    answer2: "YouTube",
+    answer3: "Instagram",
+    answer4: "TikTok",
+    answer: "Facebook",
 };
 questions.push(question42);
 
