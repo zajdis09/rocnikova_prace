@@ -274,7 +274,7 @@ let question26 = {
 questions.push(question26);
 
 let question27 = {
-    question: "Kolik má český jazyk pádů_",
+    question: "Kolik má český jazyk pádů?",
     answer1: "2",
     answer2: "4",
     answer3: "7",
@@ -462,7 +462,6 @@ let question45 = {
     answer: "Těstoviny",
 };
 questions.push(question45);
-0
 
 
 let random = 0;
